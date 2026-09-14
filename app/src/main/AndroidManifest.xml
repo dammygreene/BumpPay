@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- HCE is the whole product; without this permission the service never receives a tap. -->
+    <uses-permission android:name="android.permission.NFC" />
+
+    <!-- The payer app talks to RPC only for session setup and blockhash refresh. At the
+         moment of the tap it does no network I/O at all. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Success and failure both need to be felt, not just seen. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Session state lives in memory and in Keystore-wrapped storage; this is for the
+         foreground-only blockhash cache and the armed-session indicator. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- HCE itself does not require NFC hardware to be present at install time, but the app
+         is useless without it. required="false" keeps the APK installable on an emulator
+         used only for UI work; the runtime check in NfcStateMonitor reports the truth. -->
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="false" />
+
+    <application
+        android:name=".BumpPayApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BumpPay">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.BumpPay"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          The card-emulation service. This is the component that owns the tap.
+
+          exported="true" is required: the NFC stack, not the app, is what binds to it.
+          android:permission="android.permission.BIND_NFC_SERVICE" is what stops any other
+          app on the device from binding and impersonating the payer — without it, a
+          malicious app could talk to this service directly and drive the signing path.
+          Both are non-negotiable for a component that signs transactions.
+        -->
+        <service
+            android:name=".hce.BumpPayApduService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+        </service>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,50 @@
+# --- Android / Gradle ---
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
+
+# --- Secrets ---
+# Never commit a Helius key, a keystore, or a signing password.
+# Configure these in ~/.gradle/gradle.properties instead (see gradle.properties).
+keystore.properties
+*.jks
+*.keystore
+secrets.properties
+
+# --- Anchor / Rust ---
+program/target/
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Anchor test-ledger and generated client artifacts
+test-ledger/
+program/.anchor/
+program/target/deploy/
+**/.anchor/
+
+# --- Tooling scratch ---
+.venv/
+__pycache__/
+*.pyc
+
+# Explicitly KEEP the Gradle wrapper scripts (they are source, not build output)
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Host Card Emulation routing table.
+
+  Android matches an incoming tap against this list to decide which app gets to answer.
+  The AID here MUST stay byte-identical to BumpPayApdu.AID in :core — if the two drift,
+  the tap silently routes nowhere (or to Google Wallet) and the app looks broken with no
+  error anywhere. BumpPayApduTest asserts the constant, and this comment is the second
+  half of the contract.
+
+  This AID is deliberate about its first byte: 0xF0 marks a proprietary application, which
+  keeps it clear of the major payment networks' AIDs (A0000000…). That is what makes the
+  Phase 4 "AID collision" check meaningful — if a tap reaches this service, no other HCE
+  app on the device claimed these bytes first.
+
+  requireDeviceUnlock="false" is set on purpose. Lock-state enforcement happens in the
+  service itself so that the payer can return a proper 6A82 failure status word, which is
+  what Phase 4 asks to demonstrate on camera. Letting Android refuse the tap at the NFC
+  layer would produce an indistinguishable "nothing happened" instead.
+-->
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/hce_service_description"
+    android:requireDeviceUnlock="false">
+
+    <aid-group
+        android:category="other"
+        android:description="@string/hce_aid_group_description">
+        <aid-filter android:name="F042554D5050415901" />
+    </aid-group>
+
+</host-apdu-service>

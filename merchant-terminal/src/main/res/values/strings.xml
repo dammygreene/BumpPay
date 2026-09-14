@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="terminal_app_name">BumpPay Terminal</string>
+
+    <string name="terminal_title">BumpPay Terminal</string>
+    <string name="terminal_waiting">Tap a phone to charge</string>
+    <string name="terminal_amount_label">Amount (USDC)</string>
+    <string name="terminal_charge">Charge</string>
+    <string name="terminal_reading">Reading…</string>
+    <string name="terminal_settled">Settled</string>
+    <string name="terminal_declined">Declined</string>
+    <string name="terminal_merchant_address">Merchant</string>
+    <string name="terminal_no_nfc">This device has no NFC reader</string>
+    <string name="terminal_nfc_off">Turn NFC on to accept payments</string>
+    <string name="terminal_broadcasting">Broadcasting…</string>
+    <string name="terminal_retry">New charge</string>
+</resources>

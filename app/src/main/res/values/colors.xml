@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Colour values live here as well as in Compose so that the pre-Compose window
+      background and the theme agree with ui/theme/Design.kt. A mismatch is visible as a
+      flash of a different shade on cold start.
+    -->
+    <color name="bumppay_ink_0">#08090B</color>
+    <color name="bumppay_ink_1">#101216</color>
+    <color name="bumppay_signal">#6FE3D2</color>
+</resources>

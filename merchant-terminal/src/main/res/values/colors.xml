@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shares the payer app's palette so the two halves of a tap look like one product
+         rather than two projects that happen to interoperate. -->
+    <color name="bumppay_ink_0">#08090B</color>
+    <color name="bumppay_ink_1">#101216</color>
+    <color name="bumppay_signal">#6FE3D2</color>
+</resources>
