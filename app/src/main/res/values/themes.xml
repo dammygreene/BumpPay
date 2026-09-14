@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      The activity theme exists only to get out of Compose's way.
+
+      Two things matter here:
+       - windowBackground is the app's own near-black, so the cold-start frame matches the
+         first Compose frame. The default white flash before Compose draws is exactly the
+         kind of detail that reads as "not premium" in a 3-minute video.
+       - The status bar is transparent and the system bar icons are light, because the app
+         is dark and any light chrome at the top breaks the "instrument" feel.
+    -->
+    <style name="Theme.BumpPay" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bumppay_ink_0</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>

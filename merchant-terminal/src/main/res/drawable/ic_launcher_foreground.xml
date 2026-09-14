@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Terminal-side launcher mark: the same proximity glyph, mirrored, to signal the reader
+     role. Vector so there is no binary asset and nothing that scales badly. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Arcs open to the left, i.e. facing the incoming phone. -->
+    <path
+        android:pathData="M62,44 A14,14 0 0 0 62,64"
+        android:strokeColor="#6FE3D2"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <path
+        android:pathData="M50,36 A24,24 0 0 0 50,72"
+        android:strokeColor="#6FE3D2"
+        android:strokeAlpha="0.7"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <path
+        android:pathData="M38,28 A34,34 0 0 0 38,80"
+        android:strokeColor="#6FE3D2"
+        android:strokeAlpha="0.38"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <path
+        android:pathData="M72,54 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#6FE3D2" />
+</vector>

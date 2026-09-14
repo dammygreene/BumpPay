@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Adaptive launcher icon: a proximity/signal glyph rather than a coin or a wallet.
+
+  The brand direction is "hardware-native, not generic-crypto" — the mark reads as an
+  emitted field around a contact point, which is what the product actually is. Built from
+  vector arcs so there is no binary asset in the repository and nothing to scale badly.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Inner arc: closest to the contact point, most opaque. -->
+    <path
+        android:pathData="M46,44 A14,14 0 0 1 46,64"
+        android:strokeColor="#6FE3D2"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Middle arc. -->
+    <path
+        android:pathData="M58,36 A24,24 0 0 1 58,72"
+        android:strokeColor="#6FE3D2"
+        android:strokeAlpha="0.7"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Outer arc: the field at its weakest. -->
+    <path
+        android:pathData="M70,28 A34,34 0 0 1 70,80"
+        android:strokeColor="#6FE3D2"
+        android:strokeAlpha="0.38"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- The contact point. -->
+    <path
+        android:pathData="M36,54 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#6FE3D2" />
+</vector>

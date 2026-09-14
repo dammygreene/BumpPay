@@ -1,0 +1,34 @@
+[package]
+name = "bumppay"
+version = "0.1.0"
+description = "BumpPay session program: expiry- and destination-bounded token delegation for tap-to-pay settlement"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "bumppay"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+# Keep in lockstep with anchor-cli's major/minor — a CLI newer than the crate produces
+# confusing IDL-generation failures. `anchor --version` should report 1.2.x for this manifest.
+anchor-lang = { version = "1.2.0", features = ["init-if-needed"] }
+anchor-spl = "1.2.0"
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1

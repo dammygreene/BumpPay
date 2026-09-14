@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BumpPay</string>
+
+    <!-- Host card emulation -->
+    <string name="hce_service_description">BumpPay tap-to-pay session</string>
+    <string name="hce_aid_group_description">BumpPay settlement</string>
+
+    <!-- Connect wallet -->
+    <string name="connect_title">BumpPay</string>
+    <string name="connect_tagline">Tap. Settle. Done.</string>
+    <string name="connect_action">Connect Wallet</string>
+    <string name="connect_supporting">Works with Seed Vault, Phantom and Solflare.\nNo per-tap approval.</string>
+
+    <!-- Session setup -->
+    <string name="setup_title">Set your limit</string>
+    <string name="setup_supporting">Each tap settles automatically up to this amount. Anything above it asks for your approval.</string>
+    <string name="setup_always_ask">Always ask</string>
+    <string name="setup_always_ask_detail">Every payment will request a biometric confirmation.</string>
+    <string name="setup_confirm">Confirm limit</string>
+    <string name="setup_cost_note">One biometric confirmation now. None per tap.</string>
+
+    <!-- Bump state -->
+    <string name="bump_ready">Ready to tap</string>
+    <string name="bump_hold">Hold your phone against the terminal</string>
+    <string name="bump_remaining">%1$s remaining</string>
+    <string name="bump_tap_detected">Tap detected</string>
+    <string name="bump_signing">Signing…</string>
+    <string name="bump_not_ready">Session not active</string>
+    <string name="bump_screen_off">Unlock and reopen to arm the session</string>
+
+    <!-- Success -->
+    <string name="success_title">Settled</string>
+    <string name="success_amount">%1$s</string>
+    <string name="success_view_explorer">View transaction</string>
+
+    <!-- Revoke -->
+    <string name="revoke_action">Revoke session</string>
+    <string name="revoke_title">Revoke session?</string>
+    <string name="revoke_body">This zeroes the on-chain delegation immediately. Taps will stop working until you set a new limit.</string>
+    <string name="revoke_confirm">Revoke</string>
+    <string name="revoke_cancel">Keep session</string>
+    <string name="revoke_done">Session revoked</string>
+
+    <!-- Errors -->
+    <string name="error_over_limit">Over your limit — approve this one payment?</string>
+    <string name="error_no_wallet">No compatible wallet found. Install Seed Vault, Phantom or Solflare.</string>
+    <string name="error_generic">Something went wrong: %1$s</string>
+    <string name="error_nfc_off">NFC is turned off</string>
+
+    <string name="approve_action">Approve</string>
+    <string name="dismiss_action">Dismiss</string>
+</resources>
